@@ -1,15 +1,27 @@
 pipeline{
         agent any
         stages{
-            stage('Make Directory'){
+            stage('Repository'){
                 steps{
-                    sh "mkdir ~/jenkins-tutorial-test"
+                     sh "mkdir ~/newfolder"
+                     sh "mv install-stage.sh ~/new/install-stage.sh"
+                     sh "cd ~/new/"    
+                     sh "sudo chmod +x ~/new/install-stage.sh"
+                     sh "git clone https://gitlab.com/qacdevops/chaperootodo_client"
                 }
             }
-            stage('Make Files'){
+            stage('Install-Docker'){
                 steps{
-                    sh "touch ~/jenkins-tutorial-test/file1 ~/jenkins-tutorial-test/file2"
+                    sh ". ~/newfolder/.install-stage.sh"
                 }
             }
-        }    
+
+            stage('Deployment'){
+                steps{
+                     sh "sudo docker-compose down"
+                     sh "sudo docker-compose build"
+                     sh "sudo docker-compose up -d"
+                    }
+               }
+        }  
 }
