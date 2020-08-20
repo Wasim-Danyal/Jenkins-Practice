@@ -3,7 +3,7 @@ pipeline{
         stages{
             stage('Repository'){
                 steps{
-                     sh "mkdir ~/newfolder"
+                     sh "mkdir -p ~/newfolder"
                      sh "mv install-stage.sh ~/newfolder/install-stage.sh"
                      sh "cd ~/new/"    
                      sh "sudo chmod +x ~/newfolder/install-stage.sh"
