@@ -5,7 +5,7 @@ pipeline{
                 steps{
                      sh "mkdir -p ~/newfolder"
                      sh "mv install-stage.sh ~/newfolder/install-stage.sh"
-                     sh "cd ~/new/"    
+                     sh "cd ~/newfolder/"    
                      sh "sudo chmod +x ~/newfolder/install-stage.sh"
                      sh "git clone https://gitlab.com/qacdevops/chaperootodo_client"
                 }
