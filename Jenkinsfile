@@ -18,7 +18,6 @@ pipeline{
 
             stage('Deployment'){
                 steps{
-                     sh "cd ~/jenkins/newfolder/chaperootodo_client"
                      sh "sudo docker-compose build"
                      sh "sudo docker-compose up -d"
                     }
