@@ -7,7 +7,6 @@ pipeline{
                      sh "mv install-stage.sh ~/newfolder/install-stage.sh"
                      sh "cd ~/newfolder/"    
                      sh "sudo chmod +x ~/newfolder/install-stage.sh"
-                     sh "git clone https://gitlab.com/qacdevops/chaperootodo_client"
                 }
             }
             stage('Install-Docker'){
