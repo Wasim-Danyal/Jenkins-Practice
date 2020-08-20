@@ -12,7 +12,7 @@ pipeline{
             }
             stage('Install-Docker'){
                 steps{
-                    sh ". ~/newfolder/.install-stage.sh"
+                    sh "sudo sh . ~/newfolder/.install-stage.sh"
                 }
             }
 
