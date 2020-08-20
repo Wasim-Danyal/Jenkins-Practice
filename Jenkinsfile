@@ -18,7 +18,7 @@ pipeline{
 
             stage('Deployment'){
                 steps{
-                     sh "cd ~/newfolder/"  
+                     sh "cd ./chaperootodo_client/"  
                      sh "sudo docker-compose build"
                      sh "sudo docker-compose up -d"
                     }
