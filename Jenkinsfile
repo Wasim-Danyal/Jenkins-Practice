@@ -4,9 +4,9 @@ pipeline{
             stage('Repository'){
                 steps{
                      sh "mkdir ~/newfolder"
-                     sh "mv install-stage.sh ~/new/install-stage.sh"
+                     sh "mv install-stage.sh ~/newfolder/install-stage.sh"
                      sh "cd ~/new/"    
-                     sh "sudo chmod +x ~/new/install-stage.sh"
+                     sh "sudo chmod +x ~/newfolder/install-stage.sh"
                      sh "git clone https://gitlab.com/qacdevops/chaperootodo_client"
                 }
             }
